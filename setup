@@ -53,7 +53,7 @@ case "$1" in
     # Move secrets to respective directories
     mv ${user}Cert.pem /etc/ipsec.d/certs/
     mv ${user}Key.pem /etc/ipsec.d/private/
-    mv --force ${user}Cert.p12 /mnt/
+    mv -f ${user}Cert.p12 /mnt/
 
     # Add XAUTH credentials IPsec secrets file
     echo "${user} : XAUTH \"${password}\"" >> /etc/ipsec.secrets
